@@ -1,0 +1,131 @@
+:root {
+  --retro:'Press Start 2P',cursive;
+  --ui:'Poppins',system-ui,sans-serif;
+}
+
+body {font-family:var(--ui);}
+
+.title {
+  font-family:var(--retro);
+  color:#00e8ff;
+  text-shadow:0 0 8px #00e8ff,0 0 14px #09f;
+}
+
+#startScreen {
+  background:radial-gradient(1000px 600px at 50% 50%,#1f1f1f 0,#111 60%,#000 100%);
+}
+
+/* 🎮 Canvas con borde de pista blanco/rojo */
+#gameCanvas {
+  background:#1c1c1c;
+  border:14px solid; /* grosor de la pista */
+  border-image: repeating-linear-gradient(
+    45deg,
+    white 0 25px,
+    red 25px 50px
+  ) 20; 
+  border-radius:12px;
+  box-shadow:0 0 24px rgba(0,0,0,.6);
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:auto;
+}
+
+.game-message {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:#ffeb3b;
+  font-weight:700;
+  text-shadow:0 0 10px rgba(0,0,0,.8);
+}
+
+#effectBar {
+  position:absolute;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:240px;
+  height:16px;
+  border:2px solid #fff;
+  border-radius:8px;
+}
+
+#effectFill {height:100%;width:0;background:cyan;}
+
+.active-effects {
+  position:absolute;
+  top:10px;
+  right:12px;
+  color:#ff0;
+  font-weight:700;
+}
+
+#levelTimeBar {
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:60%;
+  height:12px;
+  border:2px solid #fff;
+  border-radius:8px;
+  background:rgba(255,255,255,.15);
+}
+
+#levelTimeFill {
+  height:100%;
+  width:100%;
+  background:linear-gradient(90deg,#4caf50,#ff9800,#f44336);
+}
+
+#levelTimeText {
+  position:absolute;
+  top:-22px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:.85rem;
+  color:#fff;
+  text-shadow:0 0 6px #000;
+}
+
+.overlay {
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.7);
+  z-index:50;
+}
+
+/* 📋 Simbología */
+.legend {
+  background:#000;
+  border:2px solid rgb(4,190,166);
+  border-radius:10px;
+  box-shadow:0 0 12px rgb(4,190,166);
+}
+.legend .card-header {
+  background:rgb(4,190,166);
+  color:#000;
+  text-align:center;
+}
+.legend .card-body p {
+  margin:.3rem 0;
+  color:#fff;
+}
+
+/* 🌌 Navbar retro */
+.neon-nav {
+  background-color:#000 !important;
+  border-bottom:3px solid #0ff;
+  box-shadow:0 0 12px #0ff;
+}
+.neon-nav .navbar-brand {
+  font-family:'Press Start 2P',cursive;
+  color:#0ff !important;
+  text-shadow:0 0 6px #0ff,0 0 12px #00e8ff;
+}
